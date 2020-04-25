@@ -11,15 +11,15 @@ var buyEnd = "</span></div></div><div class=\"mr-3\"><a class=\"item item-rounde
 var finalEnd = ")\"><button class=\"btn btn-success\">Buy</button></a></div></div></div>";
 
 //RUNESCAPE ID'S
-var buyItems = [436, 438, 440, 453, 442, 444, 447, 449, 451, 1511];
+var buyItems = [436, 438, 440, 453, 442, 444, 447, 449, 451, 1511, 1521];
 //MELVORE ID'S
-var localCodes = [45, 46, 47, 48, 49, 50, 51, 52, 53, 0];
+var localCodes = [45, 46, 47, 48, 49, 50, 51, 52, 53, 0, 1];
 //RUNESCAPE NAMES
-var itemNames = ["Copper Ore", "Tin Ore", "Iron Ore", "Coal Ore", "Silver Ore", "Gold Ore", "Mithril Ore", "Adamantite Ore", "Runite Ore", "Normal Logs"];
+var itemNames = ["Copper Ore", "Tin Ore", "Iron Ore", "Coal Ore", "Silver Ore", "Gold Ore", "Mithril Ore", "Adamantite Ore", "Runite Ore", "Normal Logs", "Oak Logs"];
 var imageLink = "https://melvoridle.com/assets/media/skills/mining/";
 var logLink = "https://melvoridle.com/assets/media/bank/";
 //MELVORE IMAGE FILE NAMES
-var imageNames = ["ore_copper", "ore_tin", "ore_iron", "ore_coal", "ore_silver", "ore_gold", "ore_mithril", "ore_adamantite", "ore_runite", "logs_normal"];
+var imageNames = ["ore_copper", "ore_tin", "ore_iron", "ore_coal", "ore_silver", "ore_gold", "ore_mithril", "ore_adamantite", "ore_runite", "logs_normal", "logs_oak"];
 var link = "https://cors-anywhere.herokuapp.com/http://services.runescape.com/m=itemdb_oldschool/api/graph/";
 var price;
 var material = document.getElementById('shop-cat-5');
@@ -42,7 +42,7 @@ function makePrice(i) {
         price = request.responseText.split(',')[179].split(':')[1].replace("}", "");
         console.log(itemNames[i]);
         console.log(price);
-        if(i == 9) {
+        if(i == 9 || i == 10) {
         	material.innerHTML = material.innerHTML + buy + (logLink + imageNames[i] + ".svg") + imageStart + itemNames[i] + mid + "" + mid2 + (price * buyQty).toString() + buyEnd + localCodes[i] + ", " + price + finalEnd;
         }
         else {
