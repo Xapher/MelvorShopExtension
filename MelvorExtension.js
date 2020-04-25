@@ -11,14 +11,14 @@ var buyEnd = "</span></div></div><div class=\"mr-3\"><a class=\"item item-rounde
 var finalEnd = ")\"><button class=\"btn btn-success\">Buy</button></a></div></div></div>";
 
 //RUNESCAPE ID'S
-var buyItems = [436, 438, 440, 453, 442, 444, 447, 449, 451];
+var buyItems = [436, 438, 440, 453, 442, 444, 447, 449, 451, 1511];
 //MELVORE ID'S
-var localCodes = [45, 46, 47, 48, 49, 50, 51, 52, 53];
+var localCodes = [45, 46, 47, 48, 49, 50, 51, 52, 53, 0];
 //RUNESCAPE NAMES
-var itemNames = ["Copper Ore", "Tin Ore", "Iron Ore", "Coal Ore", "Silver Ore", "Gold Ore", "Mithril Ore", "Adamantite Ore", "Runite Ore"];
+var itemNames = ["Copper Ore", "Tin Ore", "Iron Ore", "Coal Ore", "Silver Ore", "Gold Ore", "Mithril Ore", "Adamantite Ore", "Runite Ore", "Normal Logs"];
 var imageLink = "https://melvoridle.com/assets/media/skills/mining/";
 //MELVORE IMAGE FILE NAMES
-var imageNames = ["ore_copper", "ore_tin", "ore_iron", "ore_coal", "ore_silver", "ore_gold", "ore_mithril", "ore_adamantite", "ore_runite"];
+var imageNames = ["ore_copper", "ore_tin", "ore_iron", "ore_coal", "ore_silver", "ore_gold", "ore_mithril", "ore_adamantite", "ore_runite", "logs_normal"];
 var link = "https://cors-anywhere.herokuapp.com/http://services.runescape.com/m=itemdb_oldschool/api/graph/";
 var price;
 var material = document.getElementById('shop-cat-5');
