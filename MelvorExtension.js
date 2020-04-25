@@ -17,6 +17,7 @@ var localCodes = [45, 46, 47, 48, 49, 50, 51, 52, 53, 0];
 //RUNESCAPE NAMES
 var itemNames = ["Copper Ore", "Tin Ore", "Iron Ore", "Coal Ore", "Silver Ore", "Gold Ore", "Mithril Ore", "Adamantite Ore", "Runite Ore", "Normal Logs"];
 var imageLink = "https://melvoridle.com/assets/media/skills/mining/";
+var logLink = "https://melvoridle.com/assets/media/bank/";
 //MELVORE IMAGE FILE NAMES
 var imageNames = ["ore_copper", "ore_tin", "ore_iron", "ore_coal", "ore_silver", "ore_gold", "ore_mithril", "ore_adamantite", "ore_runite", "logs_normal"];
 var link = "https://cors-anywhere.herokuapp.com/http://services.runescape.com/m=itemdb_oldschool/api/graph/";
@@ -41,8 +42,12 @@ function makePrice(i) {
         price = request.responseText.split(',')[179].split(':')[1].replace("}", "");
         console.log(itemNames[i]);
         console.log(price);
-        material.innerHTML = material.innerHTML + buy + (imageLink + imageNames[i] + ".svg") + imageStart + itemNames[i] + mid + "" + mid2 + (price * buyQty).toString() + buyEnd + localCodes[i] + ", " + price + finalEnd;
-        
+        if(i == 9) {
+        	material.innerHTML = material.innerHTML + buy + (logLink + imageNames[i] + ".svg") + imageStart + itemNames[i] + mid + "" + mid2 + (price * buyQty).toString() + buyEnd + localCodes[i] + ", " + price + finalEnd;
+        }
+        else {
+        	material.innerHTML = material.innerHTML + buy + (imageLink + imageNames[i] + ".svg") + imageStart + itemNames[i] + mid + "" + mid2 + (price * buyQty).toString() + buyEnd + localCodes[i] + ", " + price + finalEnd;
+        }
         if(i == 8) {
           material.innerHTML = material.innerHTML + buy + (imageLink + "ore_dragonite.svg") + imageStart + "Dragonite Ore" + mid + "" + mid2 + ((Math.floor((price * 1.35))) * buyQty).toString() + buyEnd + "54, " + price + finalEnd;
         }
